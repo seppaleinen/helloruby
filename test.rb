@@ -27,4 +27,8 @@ def if_elsif(str)
 	end
 end
 
+def splatty(str, *list)
+	list.each { |item| puts str + " " + item }
+end
+
 if_elsif("Jackie")
