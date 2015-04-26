@@ -1,21 +1,30 @@
 #!/usr/bin/ruby
 
-puts "DAVID".downcase.reverse
-
-puts "skriv nåt"
-input = gets.chomp.capitalize!
-
-puts "hej #{input}"
-
-
-for i in 1..100
-	puts "#{i}"
+def echo(str)
+	print str.upcase
+	puts str.downcase.reverse
 end
 
-if "#{input}" == "David"
-	print "Hej #{input}"
-elsif "#{input}" == "Jackie"
-	print "Du är fan mys"
-else
-	print "Hallå #{input}
+def input()
+	puts "input"
+	input = gets.chomp
+	echo("#{input}")
 end
+
+def for_loop()
+	for i in 1..100
+		puts "#{i}"
+	end
+end
+
+def if_elsif(str)
+	if "#{str}" == "David"
+		print "Hej #{str}"
+	elsif "#{str}" == "Jackie"
+		print "Du är fan mys"
+	else
+		print "Hallå #{str}"
+	end
+end
+
+if_elsif("Jackie")
