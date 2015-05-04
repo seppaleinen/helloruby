@@ -30,5 +30,3 @@ end
 def splatty(str, *list)
 	list.each { |item| puts str + " " + item }
 end
-
-if_elsif("Jackie")
