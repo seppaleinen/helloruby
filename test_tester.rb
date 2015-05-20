@@ -1,20 +1,9 @@
 require 'test/unit'
-require_relative 'test.rb'
-
 require 'stringio'
+
+require_relative 'test.rb'
  
-module Kernel
- 
-  def capture_stdout
-    out = StringIO.new
-    $stdout = out
-    yield
-    return out
-  ensure
-    $stdout = STDOUT
-  end
- 
-end
+
 
 class TestClass < Test::Unit::TestCase
 	def testMethod
@@ -34,3 +23,15 @@ class TestClass < Test::Unit::TestCase
 	end
 end
 
+module Kernel
+ 
+  def capture_stdout
+    out = StringIO.new
+    $stdout = out
+    yield
+    return out
+  ensure
+    $stdout = STDOUT
+  end
+ 
+end
