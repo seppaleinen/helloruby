@@ -30,3 +30,18 @@ end
 def splatty(str, *list)
 	list.each { |item| puts str + " " + item }
 end
+
+class Car
+	def initialize(brand, model)
+		@brand = brand
+		@model = model
+	end
+	def start_engine
+		if @engine_state
+			puts "#{@brand} #{@model} is already running"
+		else
+			@engine_state = true
+			puts 'Engine idle'
+		end
+	end
+end
