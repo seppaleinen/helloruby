@@ -21,6 +21,14 @@ class TestClass < Test::Unit::TestCase
 		end
 		assert_equal "toyota yaris is already running\n", out.string
 	end
+	def test_responde_to_downcase
+		result = respond_to_downcase("a")
+		assert_equal true, result
+	end
+	def test_concatenation_operator
+		result = concatenation_operator("A", "B")
+		assert_equal "AB", result
+	end
 end
 
 module Kernel

@@ -27,8 +27,30 @@ def if_elsif(str)
 	end
 end
 
+def respond_to_downcase(object)
+	return object.respond_to?(:downcase)
+end
+
+def concatenation_operator(firstString, secondString)
+	return firstString << secondString
+end
+
 def splatty(str, *list)
 	list.each { |item| puts str + " " + item }
+end
+
+def action_if_statement()
+	puts "Hej" if 2 > 1
+end
+
+def switch_case()
+	var = "2"
+	case var
+	when "1" then puts "1"
+	when "2" then puts "2"
+	else
+		puts "other"
+	end
 end
 
 class Car
