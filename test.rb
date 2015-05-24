@@ -53,6 +53,23 @@ def switch_case()
 	end
 end
 
+def blocks()
+	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+	symbols = strings.collect{ |x| x.to_sym }
+end
+
+def procs()
+	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+	symbolize = Proc.new { |x| x.to_sym }
+	symbols = strings.collect(&symbolize)
+end
+
+def lambda()
+	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+	symbolize = lambda { |x| x.to_sym }
+	symbols = strings.collect(&symbolize)
+end
+
 class Car
 	def initialize(brand, model)
 		@brand = brand
