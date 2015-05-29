@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'stringio'
 
-require_relative 'test.rb'
+require_relative '../lib/code.rb'
  
 
 
