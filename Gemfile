@@ -8,3 +8,6 @@ require 'bundler/setup'
 group :test do
   #gem 'rspec' , '2.14.0'
 end
+
+# Specify your gem's dependencies in new_gem.gemspec
+gemspec
