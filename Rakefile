@@ -22,6 +22,6 @@ Rake::TestTask.new(:test => [:codeGen, :dataLoad]) do |t|
     t.test_files = FileList["test/*_test.rb"]
 end
 
-task :install => [:codeGen, :dataLoad, :test] do
-	sh 'bundle install'
-end
+#task :install => [:codeGen, :dataLoad, :test] do
+#	sh 'bundle install'
+#end
