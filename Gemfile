@@ -13,3 +13,4 @@ end
 gemspec
 gem 'rake', '~> 0.9.6'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'docile', '1.1.5'

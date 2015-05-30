@@ -23,5 +23,6 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.9)
   codeclimate-test-reporter
+  docile (= 1.1.5)
   rake (~> 0.9.6)
   rubyProject!
