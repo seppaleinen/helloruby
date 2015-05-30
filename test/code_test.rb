@@ -2,6 +2,9 @@ require 'test/unit'
 require 'stringio'
 
 require_relative '../lib/code.rb'
+
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
  
 
 
