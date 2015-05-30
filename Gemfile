@@ -11,4 +11,4 @@ end
 
 # Specify your gem's dependencies in new_gem.gemspec
 gemspec
-gem 'rake', '~> 10.0'
+gem 'rake', '~> 0.9.6'
