@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     rubyProject (0.1)
+      docile (= 1.1.5)
+      simplecov (>= 0.7.1, < 1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -23,6 +25,5 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.9)
   codeclimate-test-reporter
-  docile (= 1.1.5)
   rake (~> 0.9.6)
   rubyProject!
