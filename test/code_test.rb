@@ -1,11 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'stringio'
 
 require_relative '../lib/code.rb'
-
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
- 
 
 
 class TestClass < Test::Unit::TestCase
@@ -31,6 +27,21 @@ class TestClass < Test::Unit::TestCase
 	def test_concatenation_operator
 		result = concatenation_operator("A", "B")
 		assert_equal "AB", result
+	end
+end
+
+class TestClass < Test::Unit::TestCase
+	def test_echo
+		str = "STR"
+		out = capture_stdout do
+			echo(str)
+		end
+
+	end
+	def test_for_loop
+		out = capture_stdout do
+			for_loop
+		end
 	end
 end
 
