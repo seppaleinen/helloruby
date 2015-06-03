@@ -30,5 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 0.9.6"
   spec.add_development_dependency "codeclimate-test-reporter"
+  spec.add_development_dependency "coveralls"
   #spec.add_development_dependency "docile", "1.1.5"
 end
