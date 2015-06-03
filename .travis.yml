@@ -6,4 +6,4 @@ env:
   global:
     -  CODECLIMATE_REPO_TOKEN="fc864be23e40a4799ce40ee3a841b9a3dfe85010efc2e531342f25ea192e9ba5"
 
-after_success: bundle exec coveralls
+after_success: bundle exec coveralls push
