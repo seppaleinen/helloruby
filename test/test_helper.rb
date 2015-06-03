@@ -1,6 +1,7 @@
-require 'test/unit'
-require "codeclimate-test-reporter"
 require "coveralls"
-
 Coveralls.wear!
+
+require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
+
+require 'test/unit'
