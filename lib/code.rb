@@ -21,9 +21,9 @@ def if_elsif(str)
 	if "#{str}" == "David"
 		print "Hej #{str}"
 	elsif "#{str}" == "Jackie"
-		print "Du är fan mys"
+		print "Du aer fan mys"
 	else
-		print "Hallå #{str}"
+		print "Halla #{str}"
 	end
 end
 
@@ -53,18 +53,18 @@ def switch_case()
 	end
 end
 
-def blocks()
+def block_func()
 	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 	symbols = strings.collect{ |x| x.to_sym }
 end
 
-def procs()
+def proc_func()
 	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 	symbolize = Proc.new { |x| x.to_sym }
 	symbols = strings.collect(&symbolize)
 end
 
-def lambda()
+def lambda_func()
 	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 	symbolize = lambda { |x| x.to_sym }
 	symbols = strings.collect(&symbolize)

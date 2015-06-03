@@ -36,12 +36,41 @@ class TestClass < Test::Unit::TestCase
 		out = capture_stdout do
 			echo(str)
 		end
-
 	end
 	def test_for_loop
 		out = capture_stdout do
 			for_loop
 		end
+	end
+	def test_if_elsif_david
+		out = capture_stdout do
+			if_elsif("David")
+		end
+		assert_equal "Hej David", out.string
+	end
+	def test_if_elsif_jackie
+		out = capture_stdout do
+			if_elsif("Jackie")
+		end
+		assert_equal "Du aer fan mys", out.string
+	end
+	def test_if_elsif_else
+		out = capture_stdout do
+			if_elsif("hej")
+		end
+		assert_equal "Halla hej", out.string
+	end
+	def test_respond_to_downcase_true
+		result = respond_to_downcase("hej")
+		assert_equal true, result
+	end
+	def test_respond_to_downcase_false
+		result = respond_to_downcase([])
+		assert_equal false, result
+	end
+	def test_concatenation_operator
+		result = concatenation_operator("1","2")
+		assert_equal "12", result
 	end
 end
 
