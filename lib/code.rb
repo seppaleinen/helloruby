@@ -43,8 +43,7 @@ def action_if_statement()
 	puts "Hej" if 2 > 1
 end
 
-def switch_case()
-	var = "2"
+def switch_case(var)
 	case var
 	when "1" then puts "1"
 	when "2" then puts "2"

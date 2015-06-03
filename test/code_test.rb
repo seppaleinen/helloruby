@@ -68,9 +68,33 @@ class TestClass < Test::Unit::TestCase
 		result = respond_to_downcase([])
 		assert_equal false, result
 	end
-	def test_concatenation_operator
+	def test_concatenation_operator_1
 		result = concatenation_operator("1","2")
 		assert_equal "12", result
+	end
+	def test_action_if_statement_1
+		out = capture_stdout do
+			action_if_statement
+		end
+		assert_equal "Hej\n", out.string
+	end
+	def test_switch_1
+		out = capture_stdout do
+			switch_case("1")
+		end
+		assert_equal "1\n", out.string
+	end
+	def test_switch_2
+		out = capture_stdout do
+			switch_case("2")
+		end
+		assert_equal "2\n", out.string
+	end
+	def test_switch_3
+		out = capture_stdout do
+			switch_case("3")
+		end
+		assert_equal "other\n", out.string
 	end
 end
 
