@@ -96,6 +96,15 @@ class TestClass < Test::Unit::TestCase
 		end
 		assert_equal "other\n", out.string
 	end
+	def test_block
+		result = block_func
+	end
+	def test_proc
+		result = proc_func
+	end
+	def test_lambda
+		result = lambda_func
+	end
 end
 
 module Kernel
