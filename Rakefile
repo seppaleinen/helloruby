@@ -34,12 +34,13 @@ Coveralls::RakeTask.new
 task :coveralls => [:test, 'coveralls:push'] do
 	require 'simplecov'
 	require 'coveralls'
-
+	SimpleCov.command_name 'Unit Tests'
 	SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   		SimpleCov::Formatter::HTMLFormatter,
   		Coveralls::SimpleCov::Formatter
 	]
 	SimpleCov.start
+	Coveralls.wear_merged!
 	#require "coveralls"
 	#Coveralls.wear!
 	
