@@ -23,6 +23,28 @@ Rake::TestTask.new(:test => [:codeGen, :dataLoad]) do |t|
     t.test_files = FileList["test/*_test.rb"]
 end
 
+task :codeclimate => :test do
+	require 'simplecov'
+	require 'codeclimate-test-reporter'
+	CodeClimate::TestReporter::Formatter.new.format(SimpleCov.result)
+end
+
+require 'coveralls/rake/task'
+Coveralls::RakeTask.new
+task :coveralls => [:test, 'coveralls:push'] do
+	require 'simplecov'
+	require 'coveralls'
+
+	SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  		SimpleCov::Formatter::HTMLFormatter,
+  		Coveralls::SimpleCov::Formatter
+	]
+	SimpleCov.start
+	#require "coveralls"
+	#Coveralls.wear!
+	
+end
+
 #task :install => [:codeGen, :dataLoad, :test] do
 #	sh 'bundle install'
 #end
