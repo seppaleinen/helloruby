@@ -1,7 +1,7 @@
-require 'test_helper'
+require_relative 'test_helper'
 require 'stringio'
 
-require_relative '../lib/code.rb'
+require_relative '../../lib/code.rb'
 
 
 class TestClass < Test::Unit::TestCase

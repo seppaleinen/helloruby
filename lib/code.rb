@@ -7,8 +7,8 @@ end
 
 def input()
 	puts "input"
-	input = gets.chomp
-	echo("#{input}")
+	result = gets.chomp
+	return result
 end
 
 def for_loop()

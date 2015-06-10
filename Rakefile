@@ -1,5 +1,6 @@
 require 'rake'
 require 'rake/testtask'
+require 'rspec/core/rake_task'
 require "bundler/gem_tasks"
 
 task :default => :test
@@ -17,10 +18,20 @@ task :dataLoad => :codeGen do
 end
 
 desc "TESTING"
-Rake::TestTask.new(:test => [:codeGen, :dataLoad]) do |t|
+Rake::TestTask.new(:unitTest => [:codeGen, :dataLoad]) do |t|
     t.libs << 'test'
     t.verbose = false
-    t.test_files = FileList["test/*_test.rb"]
+    t.test_files = FileList["test/unitTests/*_test.rb"]
+end
+
+RSpec::Core::RakeTask.new(:specTest) do |t|
+	t.pattern = Dir.glob('test/specTests/*_spec.rb')
+	t.rspec_opts = '--format documentation'
+	t.rspec_opts = '--color'
+	#t.rcov = true
+end
+
+task :test => [:specTest, :unitTest] do
 end
 
 task :codeclimate => :test do

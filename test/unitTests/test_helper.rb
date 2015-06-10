@@ -8,6 +8,4 @@ SimpleCov.add_filter 'vendor'
 SimpleCov.formatters = []
 SimpleCov.start CodeClimate::TestReporter.configuration.profile
 
-
-
 require 'test/unit'
