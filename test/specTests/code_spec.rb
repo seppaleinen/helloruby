@@ -26,3 +26,23 @@ RSpec.describe "input" do
 		result = input
 	end
 end
+
+RSpec.describe "description" do
+	context "context1" do
+		it "it1" do
+			expect(10).to eq 10
+		end
+		it "it2" do
+			expect(10).to eq 10
+		end
+	end
+
+	context "context2" do
+		it "it1" do
+			expect(10).to eq 10
+		end
+		it "it2" do
+			expect(10).to eq 10
+		end
+	end
+end
