@@ -17,7 +17,7 @@ task :dataLoad => :codeGen do
 	puts "DATALOAD"
 end
 
-desc "UNIT TESTS"
+desc "Run unittests"
 Rake::TestTask.new(:unitTest => [:codeGen, :dataLoad]) do |t|
     t.libs << 'test'
     t.verbose = false
@@ -25,17 +25,17 @@ Rake::TestTask.new(:unitTest => [:codeGen, :dataLoad]) do |t|
 end
 
 require 'rspec/core'
-desc "SPEC TESTS"
+desc "Run RSpec tests"
 RSpec::Core::RakeTask.new(:specTest => [:codeGen, :dataLoad]) do |t|
 	t.pattern = Dir.glob('test/specTests/*_spec.rb')
 	t.rspec_opts = '--format documentation'
 	t.rspec_opts = '--color'
 end
 
-desc "ALL TESTS"
-task :test => [:specTest, :unitTest] do
-end
+desc "Run all tests and build if successful"
+task :test => [:specTest, :unitTest, :build]
 
+desc "Run codeclimate codecoverage"
 task :codeclimate => :test do
 	require 'simplecov'
 	require 'codeclimate-test-reporter'
@@ -44,6 +44,7 @@ end
 
 require 'coveralls/rake/task'
 Coveralls::RakeTask.new
+desc "Run Coveralls codecoverage"
 task :coveralls => [:test, 'coveralls:push'] do
 	require 'simplecov'
 	require 'coveralls'
@@ -55,7 +56,3 @@ task :coveralls => [:test, 'coveralls:push'] do
 	SimpleCov.start
 	Coveralls.wear_merged!
 end
-
-#task :install => [:codeGen, :dataLoad, :test] do
-#	sh 'bundle install'
-#end
