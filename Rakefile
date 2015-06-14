@@ -17,20 +17,22 @@ task :dataLoad => :codeGen do
 	puts "DATALOAD"
 end
 
-desc "TESTING"
+desc "UNIT TESTS"
 Rake::TestTask.new(:unitTest => [:codeGen, :dataLoad]) do |t|
     t.libs << 'test'
     t.verbose = false
     t.test_files = FileList["test/unitTests/*_test.rb"]
 end
 
-RSpec::Core::RakeTask.new(:specTest) do |t|
+require 'rspec/core'
+desc "SPEC TESTS"
+RSpec::Core::RakeTask.new(:specTest => [:codeGen, :dataLoad]) do |t|
 	t.pattern = Dir.glob('test/specTests/*_spec.rb')
 	t.rspec_opts = '--format documentation'
 	t.rspec_opts = '--color'
-	#t.rcov = true
 end
 
+desc "ALL TESTS"
 task :test => [:specTest, :unitTest] do
 end
 
@@ -52,9 +54,6 @@ task :coveralls => [:test, 'coveralls:push'] do
 	]
 	SimpleCov.start
 	Coveralls.wear_merged!
-	#require "coveralls"
-	#Coveralls.wear!
-	
 end
 
 #task :install => [:codeGen, :dataLoad, :test] do
