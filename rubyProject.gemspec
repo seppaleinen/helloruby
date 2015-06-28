@@ -28,10 +28,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "simplecov", ">= 0.7.1", "< 1.0.0"
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 0.9.6"
-  spec.add_development_dependency "codeclimate-test-reporter"
-  spec.add_development_dependency "coveralls"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rake", "~> 10.4.2"
+  spec.add_development_dependency "codeclimate-test-reporter", "0.4.7"
+  spec.add_development_dependency "coveralls", "0.8.2"
+  spec.add_development_dependency "rspec", "3.3.0"
   #spec.add_development_dependency "docile", "1.1.5"
-  spec.add_development_dependency "test-unit"
+  spec.add_development_dependency "test-unit", "3.1.2"
 end
