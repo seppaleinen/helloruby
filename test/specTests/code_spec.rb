@@ -46,3 +46,13 @@ RSpec.describe "description" do
 		end
 	end
 end
+
+RSpec.describe "Splatty" do
+	it "should splat" do
+		array = ["David", "Jackie"]
+		expect(STDOUT).to receive(:puts).with("Hej David")
+		expect(STDOUT).to receive(:puts).with("Hej Jackie")
+		splatty "Hej",  *array
+		
+	end
+end
