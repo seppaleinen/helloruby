@@ -40,8 +40,8 @@ task :codeclimate => :test do
 	require 'simplecov'
 	require 'codeclimate-test-reporter'
 	SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-		SimpleCov::Formatter::HTMLFormatter,
-		CodeClimate::TestReporter::Formatter
+			SimpleCov::Formatter::HTMLFormatter,
+			CodeClimate::TestReporter::Formatter
 	]
 	CodeClimate::TestReporter::Formatter.new.format(SimpleCov.result)
 end
@@ -52,11 +52,9 @@ desc "Run Coveralls codecoverage"
 task :coveralls => [:test, 'coveralls:push'] do
 	require 'simplecov'
 	require 'coveralls'
-	SimpleCov.command_name 'Unit Tests'
 	SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-  		SimpleCov::Formatter::HTMLFormatter,
-  		Coveralls::SimpleCov::Formatter
+  			SimpleCov::Formatter::HTMLFormatter,
+  			Coveralls::SimpleCov::Formatter
 	]
-	#SimpleCov.start
 	Coveralls.wear_merged!
 end
