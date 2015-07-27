@@ -12,3 +12,4 @@
 <a href="https://codeclimate.com/github/seppaleinen/rubyProject/coverage">
 	<img src="https://codeclimate.com/github/seppaleinen/rubyProject/badges/coverage.svg" />
 </a>
+
