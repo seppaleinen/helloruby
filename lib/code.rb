@@ -88,25 +88,26 @@ end
 # Block statement, turn array of str to symbols
 # Returns array of symbols
 def block_func
-  strings = %w(leonardo donatello raphael michaelangelo)
   # Rubocop gillar inte strings.collect { |x| x.to_sym }
-  strings.collect(&:to_sym)
+  array_of_strings.collect(&:to_sym)
 end
 
 # Proc statement, turn array of str to symbols
 # Returns array of symbols
 def proc_func
-  strings = %w(leonardo donatello raphael michaelangelo)
   symbolize = proc { |x| x.to_sym }
-  strings.collect(&symbolize)
+  array_of_strings.collect(&symbolize)
 end
 
 # Lambda statement, turn array of str to symbols
 # Returns array of symbols
 def lambda_func
-  strings = %w(leonardo donatello raphael michaelangelo)
   symbolize = ->(x) { x.to_sym }
-  strings.collect(&symbolize)
+  array_of_strings.collect(&symbolize)
+end
+
+def array_of_strings
+  %w(leonardo donatello raphael michaelangelo)
 end
 
 # Class Car
