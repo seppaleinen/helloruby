@@ -12,4 +12,9 @@
 <a href="https://codeclimate.com/github/seppaleinen/rubyProject/coverage">
 	<img src="https://codeclimate.com/github/seppaleinen/rubyProject/badges/coverage.svg" />
 </a>
-
+<a href="https://hakiri.io/github/seppaleinen/rubyProject/master">
+	<img src="https://hakiri.io/github/seppaleinen/rubyProject/master.svg" />
+</a>
+<a href="https://inch-ci.org/github/seppaleinen/rubyProject">
+    <img src="https://inch-ci.org/github/seppaleinen/rubyProject.svg?branch=master&style=flat" />
+</a>
