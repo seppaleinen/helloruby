@@ -38,7 +38,8 @@ end
 # Iterates over list, concatenate every iteration with str and put to stdout
 # Params:
 # +str+:: String to preface every iteration with
-# +*list+:: List to iterate over
+# +list+:: List to iterate over
+# Returns nothing
 def splatty(str, *list)
 	list.each { |item| puts str + " " + item }
 end
