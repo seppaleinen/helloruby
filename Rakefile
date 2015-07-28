@@ -5,6 +5,10 @@ require "bundler/gem_tasks"
 
 task :default => :test
 
+task :clean do
+	rm_rf ["coverage", "pkg"]
+end
+
 task :codeGen do
 	puts "CODEGEN"
 end
@@ -33,7 +37,7 @@ RSpec::Core::RakeTask.new(:specTest => [:codeGen, :dataLoad]) do |t|
 end
 
 desc "Run all tests and build if successful"
-task :test => [:specTest, :unitTest, :build]
+task :test => [:clean, :specTest, :unitTest, :build]
 
 desc "Run codeclimate codecoverage"
 task :codeclimate => :test do
