@@ -5,18 +5,25 @@ def echo(str)
 	puts str.downcase.reverse
 end
 
+# Asks for input and returns chomped result
 def input()
 	puts "input"
 	result = gets.chomp
 	return result
 end
 
+# Iterate from 1..100 and puts result
+# Returns nothing
 def for_loop()
 	for i in 1..100
 		puts "#{i}"
 	end
 end
 
+# Simple elseif case
+# Params:
+# +str+:: Name to put in elseif
+# Returns nothing
 def if_elsif(str)
 	if "#{str}" == "David"
 		print "Hej #{str}"
@@ -27,10 +34,19 @@ def if_elsif(str)
 	end
 end
 
+# Check if object is able to downcase
+# Params:
+# +object+:: Object to check
+# Returns true if downcaseable, false if not
 def respond_to_downcase(object)
 	return object.respond_to?(:downcase)
 end
 
+# Concatenates secondString to firstString
+# Params:
+# +firstString+:: The string to concatenate with
+# +secondString+:: The string to concatenate from
+# Returns result of concatenation
 def concatenation_operator(firstString, secondString)
 	return firstString << secondString
 end
@@ -44,10 +60,18 @@ def splatty(str, *list)
 	list.each { |item| puts str + " " + item }
 end
 
+# Action if-statement
+# Takes no parameters
+# Puts "Hej" if 2 is more than 1
+# Returns nothing
 def action_if_statement()
 	puts "Hej" if 2 > 1
 end
 
+# Switch-case statement
+# Params:
+# +var+:: String to test
+# Returns nothing
 def switch_case(var)
 	case var
 	when "1" then puts "1"
