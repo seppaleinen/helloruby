@@ -5,24 +5,23 @@
 # +str+:: String to print
 # Returns nothing
 def echo(str)
-	print str.upcase
-	puts str.downcase.reverse
+  print str.upcase
+  puts str.downcase.reverse
 end
 
 # Asks for input
 # Returns chomped result
-def input()
-	puts "input"
-	result = gets.chomp
-	return result
+def input
+  puts 'input'
+  gets.chomp
 end
 
 # Iterate from 1..100 and puts result
 # Returns nothing
-def for_loop()
-	for i in 1..100
-		puts "#{i}"
-	end
+def for_loop
+  [1..100].each do |i|
+    puts "#{i}"
+  end
 end
 
 # Simple elseif case
@@ -30,13 +29,13 @@ end
 # +str+:: Name to put in elseif
 # Returns nothing
 def if_elsif(str)
-	if "#{str}" == "David"
-		print "Hej #{str}"
-	elsif "#{str}" == "Jackie"
-		print "Du aer fan mys"
-	else
-		print "Halla #{str}"
-	end
+  if "#{str}" == 'David'
+    print "Hej #{str}"
+  elsif "#{str}" == 'Jackie'
+    print 'Du aer fan mys'
+  else
+    print "Halla #{str}"
+  end
 end
 
 # Check if object is able to downcase
@@ -44,7 +43,7 @@ end
 # +object+:: Object to check
 # Returns true if downcaseable, false if not
 def respond_to_downcase(object)
-	return object.respond_to?(:downcase)
+  object.respond_to?(:downcase)
 end
 
 # Concatenates secondString to firstString
@@ -53,7 +52,7 @@ end
 # +secondString+:: The string to concatenate from
 # Returns result of concatenation
 def concatenation_operator(firstString, secondString)
-	return firstString << secondString
+  firstString << secondString
 end
 
 # Iterates over list, concatenate every iteration with str and put to stdout
@@ -62,15 +61,15 @@ end
 # +list+:: List to iterate over
 # Returns nothing
 def splatty(str, *list)
-	list.each { |item| puts str + " " + item }
+  list.each { |item| puts str + ' ' + item }
 end
 
 # Action if-statement
 # Takes no parameters
 # Puts "Hej" if 2 is more than 1
 # Returns nothing
-def action_if_statement()
-	puts "Hej" if 2 > 1
+def action_if_statement
+  puts 'Hej' if 2 > 1
 end
 
 # Switch-case statement
@@ -78,56 +77,57 @@ end
 # +var+:: String to test
 # Returns nothing
 def switch_case(var)
-	case var
-	when "1" then puts "1"
-	when "2" then puts "2"
-	else
-		puts "other"
-	end
+  case var
+  when '1' then puts '1'
+  when '2' then puts '2'
+  else
+    puts 'other'
+  end
 end
 
 # Block statement, turn array of str to symbols
-# Returns nothing
-def block_func()
-	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
-	symbols = strings.collect{ |x| x.to_sym }
+# Returns array of symbols
+def block_func
+  strings = %w(leonardo donatello raphael michaelangelo)
+  # Rubocop gillar inte strings.collect { |x| x.to_sym }
+  strings.collect(&:to_sym)
 end
 
 # Proc statement, turn array of str to symbols
-# Returns nothing
-def proc_func()
-	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
-	symbolize = Proc.new { |x| x.to_sym }
-	symbols = strings.collect(&symbolize)
+# Returns array of symbols
+def proc_func
+  strings = %w(leonardo donatello raphael michaelangelo)
+  symbolize = proc { |x| x.to_sym }
+  strings.collect(&symbolize)
 end
 
 # Lambda statement, turn array of str to symbols
-# Returns nothing
-def lambda_func()
-	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
-	symbolize = lambda { |x| x.to_sym }
-	symbols = strings.collect(&symbolize)
+# Returns array of symbols
+def lambda_func
+  strings = %w(leonardo donatello raphael michaelangelo)
+  symbolize = ->(x) { x.to_sym }
+  strings.collect(&symbolize)
 end
 
 # Class Car
 class Car
-	# Initializes car with values
-	# Params:
-	# +brand+:: brand of car
-	# +model+:: model of car
-	# Returns instance of car
-	def initialize(brand, model)
-		@brand = brand
-		@model = model
-	end
-	# Starts engine, and puts result of engine state
-	# Returns nothing
-	def start_engine
-		if @engine_state
-			puts "#{@brand} #{@model} is already running"
-		else
-			@engine_state = true
-			puts 'Engine idle'
-		end
-	end
+  # Initializes car with values
+  # Params:
+  # +brand+:: brand of car
+  # +model+:: model of car
+  # Returns instance of car
+  def initialize(brand, model)
+    @brand = brand
+    @model = model
+  end
+  # Starts engine, and puts result of engine state
+  # Returns nothing
+  def start_engine
+    if @engine_state
+      puts "#{@brand} #{@model} is already running"
+    else
+      @engine_state = true
+      puts 'Engine idle'
+    end
+  end
 end
