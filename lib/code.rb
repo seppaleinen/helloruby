@@ -106,6 +106,8 @@ def lambda_func
   array_of_strings.collect(&symbolize)
 end
 
+# Gets an array of strings
+# Returns array of strings
 def array_of_strings
   %w(leonardo donatello raphael michaelangelo)
 end
