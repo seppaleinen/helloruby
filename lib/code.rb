@@ -113,9 +113,9 @@ end
 class Car
 	# Initializes car with values
 	# Params:
-	# +brand+:: Carbrand
-	# +model+:: Carmodel
-	# Returns nothing
+	# +brand+:: brand of car
+	# +model+:: model of car
+	# Returns instance of car
 	def initialize(brand, model)
 		@brand = brand
 		@model = model
