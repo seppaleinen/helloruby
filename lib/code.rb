@@ -1,11 +1,16 @@
 #!/usr/bin/ruby
 
+# Takes string, prints upcase, and puts downcased and reversed
+# Params:
+# +str+:: String to print
+# Returns nothing
 def echo(str)
 	print str.upcase
 	puts str.downcase.reverse
 end
 
-# Asks for input and returns chomped result
+# Asks for input
+# Returns chomped result
 def input()
 	puts "input"
 	result = gets.chomp
@@ -81,28 +86,42 @@ def switch_case(var)
 	end
 end
 
+# Block statement, turn array of str to symbols
+# Returns nothing
 def block_func()
 	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 	symbols = strings.collect{ |x| x.to_sym }
 end
 
+# Proc statement, turn array of str to symbols
+# Returns nothing
 def proc_func()
 	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 	symbolize = Proc.new { |x| x.to_sym }
 	symbols = strings.collect(&symbolize)
 end
 
+# Lambda statement, turn array of str to symbols
+# Returns nothing
 def lambda_func()
 	strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 	symbolize = lambda { |x| x.to_sym }
 	symbols = strings.collect(&symbolize)
 end
 
+# Class Car
 class Car
+	# Initializes car with values
+	# Params:
+	# +brand+:: Carbrand
+	# +model+:: Carmodel
+	# Returns nothing
 	def initialize(brand, model)
 		@brand = brand
 		@model = model
 	end
+	# Starts engine, and puts result of engine state
+	# Returns nothing
 	def start_engine
 		if @engine_state
 			puts "#{@brand} #{@model} is already running"
