@@ -39,9 +39,9 @@ task :codeclimate => :test do
   CodeClimate::TestReporter::Formatter.new.format(SimpleCov.result)
 end
 
+require 'coveralls/rake/task'
 desc 'Run Coveralls - Sends coverage info to coveralls.io when in CI'
 task :coveralls => [:test, 'coveralls:push'] do
-  require 'coveralls/rake/task'
   require 'simplecov'
   require 'coveralls'
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
