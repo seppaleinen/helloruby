@@ -40,6 +40,7 @@ task :codeclimate => :test do
 end
 
 require 'coveralls/rake/task'
+Coveralls::RakeTask.new
 desc 'Run Coveralls - Sends coverage info to coveralls.io when in CI'
 task :coveralls => [:test, 'coveralls:push'] do
   require 'simplecov'
