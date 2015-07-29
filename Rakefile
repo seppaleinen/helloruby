@@ -5,24 +5,13 @@ require 'bundler/gem_tasks'
 
 task :default => :test
 
+desc 'Remove coverage and pkg dirs before compilation'
 task :clean do
   rm_rf %w(coverage pkg)
 end
 
-task :codeGen do
-  puts 'CODEGEN'
-end
-
-task :compile => :codeGen do
-  puts 'COMPILE'
-end
-
-task :dataLoad => :codeGen do
-  puts 'DATALOAD'
-end
-
-desc 'Run unittests'
-Rake::TestTask.new(:unitTest => [:codeGen, :dataLoad]) do |t|
+desc 'Run Unittests'
+Rake::TestTask.new(:unitTest) do |t|
   t.libs << 'test'
   t.verbose = false
   t.test_files = FileList['test/unitTests/*_test.rb']
@@ -30,16 +19,16 @@ end
 
 require 'rspec/core'
 desc 'Run RSpec tests'
-RSpec::Core::RakeTask.new(:specTest => [:codeGen, :dataLoad]) do |t|
+RSpec::Core::RakeTask.new(:specTest) do |t|
   t.pattern = Dir.glob('test/specTests/*_spec.rb')
   t.rspec_opts = '--format documentation'
   t.rspec_opts = '--color'
 end
 
-desc 'Run all tests and build if successful'
+desc 'Clean workspace. Run RuboCop. Run spec and unittests, and build.'
 task :test => [:clean, :rubocop, :specTest, :unitTest, :build]
 
-desc 'Run codeclimate codecoverage'
+desc 'Run codeclimate - Sends coverage info to CodeClimate when in CI'
 task :codeclimate => :test do
   require 'simplecov'
   require 'codeclimate-test-reporter'
@@ -50,10 +39,9 @@ task :codeclimate => :test do
   CodeClimate::TestReporter::Formatter.new.format(SimpleCov.result)
 end
 
-require 'coveralls/rake/task'
-Coveralls::RakeTask.new
-desc 'Run Coveralls codecoverage'
+desc 'Run Coveralls - Sends coverage info to coveralls.io when in CI'
 task :coveralls => [:test, 'coveralls:push'] do
+  require 'coveralls/rake/task'
   require 'simplecov'
   require 'coveralls'
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
@@ -63,7 +51,7 @@ task :coveralls => [:test, 'coveralls:push'] do
   Coveralls.wear_merged!
 end
 
-desc 'Run rubocop'
+desc 'Run RuboCop - Tool for detecting codestyle violations'
 task :rubocop do
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new
