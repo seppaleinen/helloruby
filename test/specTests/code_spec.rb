@@ -53,6 +53,6 @@ RSpec.describe 'Splatty' do
     array = %w(David Jackie)
     expect(STDOUT).to receive(:puts).with('Hej David')
     expect(STDOUT).to receive(:puts).with('Hej Jackie')
-    splatty 'Hej',  *array
+    splatty 'Hej', *array
   end
 end
