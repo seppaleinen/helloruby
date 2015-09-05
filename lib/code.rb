@@ -123,6 +123,7 @@ class Car
     @brand = brand
     @model = model
   end
+
   # Starts engine, and puts result of engine state
   # Returns nothing
   def start_engine
