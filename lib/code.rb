@@ -46,13 +46,13 @@ def respond_to_downcase(object)
   object.respond_to?(:downcase)
 end
 
-# Concatenates secondString to firstString
+# Concatenates second_string to first_string
 # Params:
-# +firstString+:: The string to concatenate with
-# +secondString+:: The string to concatenate from
+# +first_string+:: The string to concatenate with
+# +second_string+:: The string to concatenate from
 # Returns result of concatenation
-def concatenation_operator(firstString, secondString)
-  firstString << secondString
+def concatenation_operator(first_string, second_string)
+  first_string << second_string
 end
 
 # Iterates over list, concatenate every iteration with str and put to stdout
