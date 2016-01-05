@@ -5,7 +5,10 @@ rvm:
   - 2.2.0
   - 2.2.1
   - 2.3.0
+
+before_install: gem install bundler -v 1.11.2
 script: bundle exec rake test
+
 env:
   global:
     -  CODECLIMATE_REPO_TOKEN="fc864be23e40a4799ce40ee3a841b9a3dfe85010efc2e531342f25ea192e9ba5"
