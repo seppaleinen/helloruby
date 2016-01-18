@@ -20,7 +20,7 @@ end
 # Returns nothing
 def for_loop
   [1..100].each do |i|
-    puts "#{i}"
+    puts i.to_s
   end
 end
 
@@ -29,9 +29,9 @@ end
 # +str+:: Name to put in elseif
 # Returns nothing
 def if_elsif(str)
-  if "#{str}" == 'David'
+  if str.to_s == 'David'
     print "Hej #{str}"
-  elsif "#{str}" == 'Jackie'
+  elsif str.to_s == 'Jackie'
     print 'Du aer fan mys'
   else
     print "Halla #{str}"
