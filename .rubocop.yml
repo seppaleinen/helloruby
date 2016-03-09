@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - 'rubyProject.gemspec'
+    - 'helloruby.gemspec'
     - 'vendor/bundle/**/*'
 
 

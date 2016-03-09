@@ -3,14 +3,14 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = 'rubyProject'
+  spec.name          = 'helloruby'
   spec.version       = 0.1
   spec.authors       = ['david eriksson']
   spec.email         = ['davideriksson@swedenmail.com']
 
   spec.summary       = %w(Summary)
   spec.description   = %w(Description)
-  spec.homepage      = 'http://seppaleinen.github.io'
+  spec.homepage      = 'http://seppaleinen.github.io/helloruby'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
