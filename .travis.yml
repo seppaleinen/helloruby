@@ -11,7 +11,7 @@ script: bundle exec rake test
 
 env:
   global:
-    -  CODECLIMATE_REPO_TOKEN="fc864be23e40a4799ce40ee3a841b9a3dfe85010efc2e531342f25ea192e9ba5"
+    -  CODECLIMATE_REPO_TOKEN=52cae610f5accab7e8a42bc6a426115e40cda8a3aad5e6fd49122361af3601a3
 
 after_success:
   - bundle exec rake codeclimate
